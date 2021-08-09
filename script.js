@@ -21,20 +21,30 @@ function numeroDeContenido(a){
     }
 }
 
-numeroDeContenido();
+numeroDeContenido("Hello word");
 
 // 2
+// cadena.substring(indiceA[, indiceB'])
+
 function extraer(texto= "", numero){
     if((!texto || !isNaN(texto)) || numero == undefined){
         return console.log("Hubo un error, coloco mal los datos requeridos");
     }else{    
         let ejemplo = texto;
-        console.log(ejemplo.substring(0, numero));
+        console.log(ejemplo.slice(0, numero));
     };
 };
 
-extraer(3, 1);
-
-// cadena.substring(indiceA[, indiceB'])
+extraer("Hello world", 5);
 
 // 3
+//cadena.split([separador][,limite])
+
+function dividirString(a){
+    let resultado = a;
+    let nuevoResultado = resultado.split(" ");
+    return console.log(nuevoResultado);
+
+};
+
+dividirString("Hello Worlds Para Todos!!!");
