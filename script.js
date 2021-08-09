@@ -24,11 +24,17 @@ function numeroDeContenido(a){
 numeroDeContenido();
 
 // 2
-function extraer(texto, numero){
-    let ejemplo = texto;
-    console.log(ejemplo.substring(0, numero));
-}
+function extraer(texto= "", numero){
+    if((!texto || !isNaN(texto)) || numero == undefined){
+        return console.log("Hubo un error, coloco mal los datos requeridos");
+    }else{    
+        let ejemplo = texto;
+        console.log(ejemplo.substring(0, numero));
+    };
+};
 
-extraer("Hola mundo", 7);
+extraer(3, 1);
 
 // cadena.substring(indiceA[, indiceB'])
+
+// 3
