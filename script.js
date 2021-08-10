@@ -1,4 +1,4 @@
-
+/*
 // 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. 
 //     miFuncion("Hola Mundo") devolverá 10.
 // 2) Programa una función que te devuelva el texto recortado según el número de caracteres 
@@ -7,7 +7,7 @@
 //     cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
 // 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá
 //     Hola Mundo Hola Mundo Hola Mundo.
-/*
+
 // 1
 function numeroDeContenido(a){
 
@@ -124,7 +124,7 @@ repetirTexto("Hello world", -20);
 repetirTexto("", 20);
 repetirTexto("Hello world");
 
-*/
+
 
 // 5) Programa una función que invierta las palabras de una cadena de texto, pe.
 //  miFuncion("Hola Mundo") devolverá "odnuM aloH".
@@ -172,11 +172,113 @@ const contadorPalabras = (cadena="", texto="")=>{
     return console.info(`La palabra ${texto} se repite ${contador} veces`);
 }
 
+contadorPalabras();
 contadorPalabras("hola como estas hola pepe hola pepa", "hola");
 
+// let ejemplo = "hola como estas hola pepe hola pepa";
+// let resultado = ejemplo.indexOf("hola", 24);
+// console.log(resultado);
 
-let ejemplo = "hola como estas hola pepe hola pepa";
+// 7
 
-let resultado = ejemplo.indexOf("hola", 24);
-console.log(resultado);
+const palindromo = (valor = "")=>{
+    if(!valor) return console.info("Coloque un valor");
 
+    let resultado = valor.toLowerCase();
+    let resultadoAComparar = resultado.split("").reverse().join("");
+    
+    return (resultado == resultadoAComparar)
+    ?console.log(`El valor "${valor}" SI es un palindromo.`)
+    :console.log(`El valor "${valor}" NO es un palindromo.`)
+}
+
+palindromo();
+palindromo("join mircha");
+palindromo("Otto");
+
+// 8
+
+const eliminarCaracteres = (valor="", eliminarvalor="")=>{
+    if(!valor) return console.warn("No ha ingresado valor a evaluar");
+    if(!eliminarvalor) return console.warn("No ha ingresado el valor para eliminar");
+    
+    let valorFinal = valor.replace(new RegExp(eliminarvalor, "ig"), "");
+    if(valor === valorFinal){
+        return console.log(`El valor "${eliminarvalor}" no se encuentra en el texto`);
+    }else{
+        return console.log(valorFinal);        
+    }
+
+    
+}
+
+eliminarCaracteres()
+eliminarCaracteres("aeiou, aeiou, aeiou, aeiou", "r")
+eliminarCaracteres("aeiou, aeiou, aeiou, aeiou", "a");
+
+// 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+// 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual 
+//     en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+// 11) Programa una función que calcule el factorial de un número (El factorial de un entero 
+//     positivo n, se define como el producto de todos los números enteros positivos desde 1 
+//     hasta n), pe. miFuncion(5) devolverá 120.
+
+// 9
+
+const numeroAleatorio = ()=> console.log(`Numero aleatorio entre 501 y 600: ${Math.round(Math.random() * (600 - 501) + 501)}`);
+numeroAleatorio();
+
+// 10
+
+const numeroCapicua = (numero="") =>{
+    if (!numero) return console.info("No ha colocado el numero a evaluar");
+    
+    let numeroString= String(numero) ;
+    
+    let resultado = numeroString.split("").reverse().join("");
+    
+    if (resultado === numeroString) {
+        return console.info(`El numero ${numero} es capicua`)
+    }else{
+        return console.info(`El numero ${numero} no es capicua`)
+    }
+
+}
+
+numeroCapicua();
+numeroCapicua(123);
+numeroCapicua(111);
+*/
+// 11
+// miFuncion(5) devolverá 120.
+
+const factorial = (numero="") => {
+    if (!numero) return console.info("No ha colocado el numero a evaluar");
+    
+
+    let resultado = 1;
+                        
+    for(let i = 1; i <= numero; i++){
+        resultado *= i;
+    }
+
+    return console.log(`El factorial de ${numero} es : ${resultado}`);
+}
+factorial(5);
+
+//console.log(3!)
+
+
+
+
+
+
+
+
+
+
+// console.log(window)
+// console.log(close())
+
+// let numero1 = Number("sssd")
+// console.log(numero1);
