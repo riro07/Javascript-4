@@ -329,7 +329,7 @@ factorial(5);
 //  Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
 
 // 12
-
+/*
 const esPrimo = numero => {
 	// Casos especiales
 	if (numero == 0 || numero == 1 || numero == 4) return false;
@@ -348,6 +348,35 @@ console.log(esPrimo(76));
 
 // if(2 < 67 / 2) console.log("true")
 // console.log(67 % 3 )
+*/
 
-// 13
+// 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 
+const parImpar = (value)=>{
+    if(isNaN(value)) return console.error("Pon un numero por favor");
+
+    if(value % 2 == 0){
+        return console.log("El numero es par")
+    }else{
+        return console.log("El numero es impar")
+    }; 
+        
+};
+
+parImpar(33);
+
+// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa.
+// pe.miFuncion(0,"C") devolverá 32°F.
+
+const convercionCelFah = (grados, x)=>{
+    if(x === "C"|| x === "c") return console.log(`${((grados * (9/5)) + 32)}°F`);
+    
+    if(x === "F"|| x === "f") return console.log(`${(grados - 32) * (5/9)}°C`);
+    
+    console.log("Fin");
+    //let resultado = (0 °C × 9/5) + 32 = 32 °F;
+
+};
+
+convercionCelFah(1, "c");
+convercionCelFah(3, "f");
